@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-\\IUT\Etudiants\Home\jnvarzea\Desktop\IHMDisplay\disp\disp\obj\Debug\
+\\iut.bx1\Etudiants\Home\jnvarzea\Desktop\IHMDisplay\MDISPLAY-IHM\disp\disp\obj\Debug\
 disp
 none
 false
 DEBUG;TRACE
-\\IUT\Etudiants\Home\jnvarzea\Desktop\IHMDisplay\disp\disp\App.xaml
-2-1183158946
+\\iut.bx1\Etudiants\Home\jnvarzea\Desktop\IHMDisplay\MDISPLAY-IHM\disp\disp\App.xaml
+3-1751393817
 
-112109143398
-13-1929740215
-Diaporama.xaml;MainWindow.xaml;
+13-647388538
+13-83729030
+BrowserControl.xaml;Diaporama.xaml;MainWindow.xaml;
 
-False
+True
 
