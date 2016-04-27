@@ -1,0 +1,67 @@
+﻿<Window x:Class="disp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="550" Width="825">
+    <Grid>
+            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0" IsMainMenu="True">
+            <MenuItem Header="_Diaporama" Click="Diaporama_Click" ToolTip="Lance le Diaporama" Icon=""/>
+            <MenuItem Header="_Edit" Click="EditItem_Click"  />
+        </Menu>
+        
+        <Grid Grid.Row="1">
+            
+            <!--#region Structure-->
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="5"></ColumnDefinition>
+                <ColumnDefinition Width="250"></ColumnDefinition>
+                <ColumnDefinition Width="5"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <!--#endregion-->
+            <GridSplitter Grid.Column="1" ResizeBehavior="PreviousAndNext" Width="3"></GridSplitter>
+            <GridSplitter Grid.Column="3" ResizeBehavior="PreviousAndNext" Width="3"></GridSplitter>
+
+
+            <ListBox Grid.Column="2" x:Name="listBox"
+             HorizontalAlignment="Stretch"
+             VerticalAlignment="Stretch"
+             ItemsSource="{Binding Fichiers}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="80" Height="60"
+                                 HorizontalAlignment="Center">
+                                <Image.Source>
+                                    <BitmapImage DecodePixelWidth="80"
+                                     DecodePixelHeight="60"
+                                     UriSource="{Binding Path=FullName}" />
+                                </Image.Source>
+                            </Image>
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Path=Name}" />
+                                    <TextBlock Text="Taille" />
+                                    <TextBlock Text="{Binding Path=Length}" Margin="10,0" />
+                
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                
+            </ListBox>
+            <Image Grid.Column="4" x:Name="image" HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch"
+                 Source="{Binding ElementName=listBox, Path=SelectedItem.FullName}"/>
+        </Grid>
+        
+    </Grid>
+</Window>
