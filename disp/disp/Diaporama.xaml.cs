@@ -22,18 +22,18 @@ namespace disp
     public partial class Diaporama : Window
     {
         List<JPGFileInfo> _listJpg;
-        JPGFileInfo activeImage;
+        JPGFileInfo mImage;
         DispatcherTimer timer;
-        int index;
+        int id;
         public Diaporama(List<JPGFileInfo> listJpg)
         {
             InitializeComponent();
             this._listJpg = listJpg;
-            index = 0;
-            activeImage = _listJpg[index];
-            DataContext = activeImage;
+            id = 0;
+            mImage = _listJpg[id];
+            DataContext = mImage;
             timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 5);
+            timer.Interval = new TimeSpan(0, 0, 3);
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
         }
@@ -45,30 +45,30 @@ namespace disp
 
         public void nextImage()
         {
-            if (index < _listJpg.Count() - 1)
+            if (id < _listJpg.Count() - 1)
             {
-                index++;
+                id++;
             }
             else
             {
-                index = 0;
+                id = 0;
             }
-            activeImage = _listJpg[index];
-            DataContext = activeImage;
+            mImage = _listJpg[id];
+            DataContext = mImage;
         }
 
         public void previousImage()
         {
-            if (index > 0)
+            if (id > 0)
             {
-                index--;
+                id--;
             }
             else
             {
-                index = _listJpg.Count() - 1;
+                id = _listJpg.Count() - 1;
             }
-            activeImage = _listJpg[index];
-            DataContext = activeImage;
+            mImage = _listJpg[id];
+            DataContext = mImage;
         }
 
 
@@ -84,12 +84,15 @@ namespace disp
             switch (e.Key)
             {
                 case Key.Left:
-                    timer.Interval = new TimeSpan(0, 0, 5);
+                    timer.Interval = new TimeSpan(0, 0, 3); //reset timer
                     previousImage();
                     break;
                 case Key.Right:
-                    timer.Interval = new TimeSpan(0, 0, 5);
+                    timer.Interval = new TimeSpan(0, 0, 3);
                     nextImage();
+                    break;
+                case Key.Space:
+                    timer.IsEnabled = !timer.IsEnabled; //pause
                     break;
                 default:
                     timer.Stop();

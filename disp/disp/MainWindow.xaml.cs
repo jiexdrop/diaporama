@@ -43,6 +43,11 @@ namespace disp
 
         }
 
+        private void treeView_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
        
     }
 
