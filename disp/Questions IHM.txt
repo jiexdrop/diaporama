@@ -1,0 +1,42 @@
+﻿
+//Q1:
+* Le "*" signifie que ces valeurs vont prendre toute la largeur restante disponible.
+
+//Q2:
+* Stretch signifie le controle va disposer de tout l'espace pour se placer (il devient "elastique")
+
+//Q3:
+* Si la liste n'est pas nulle, alors on peut récuperer nos fichiers, sinon, on ne récuperera aucun fichier.
+  En C#2015, = ?
+  
+//Q4:
+* VUE <-> Modèle Vue <-> MODELE 
+  Il sépare traitement des données et leur affichage
+  
+//Q5:
+* Il est de type object -(surchargeable?)-
+
+//Q6:
+* On à definit que la recherche portait uniquement les fichiers .jpg dans le passage
+
+//Q7:
+*
+
+//Q8:
+*
+
+//Q9:
+* Il permet de sélectioner l'element par la première lettre du mot ( Tab+D )
+
+//Q10:
+* Permet d'afficher un information textuelle lors d'un survol
+
+//Q11:
+* En definissant automatiquement sa taille
+
+//Q12:
+* On n'a pas défini d'évenements pour ce contrôle (pas de selection, pas de changement de path...)
+
+
+//////////////////////////////
+ETAT D'AVANCEMENT
